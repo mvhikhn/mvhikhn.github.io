@@ -1,240 +1,381 @@
-<!doctype html>
-<html style="font-size: 14px !important">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width initial-scale=1" />
+<!DOCTYPE html>
+<html style='font-size:13px !important'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>About Me Template</title>
 
-        <link
-            href="https://db.onlinewebfonts.com/c/f05bbbfac1257664fc69ba21f8451b57?family=ABC+Diatype"
-            rel="stylesheet"
-            type="text/css"
-        />
+<link href='https://db.onlinewebfonts.com/c/f05bbbfac1257664fc69ba21f8451b57?family=ABC+Diatype' rel='stylesheet' type='text/css' />
 
-        <style type="text/css">
-            /* === Existing CSS (kept as is) === */
+<style>
+/* ================================================================================
+    CSS STYLING STARTS HERE
+    ================================================================================
+*/
 
-            /* === Dark Mode Toggle === */
-            #dark-mode-toggle {
-                position: fixed;
-                bottom: 30px;
-                right: 30px;
-                width: 1ch;
-                height: 1ch;
-                border-radius: 50%;
-                background-color: #000;
-                cursor: pointer;
-                z-index: 9999;
-                transition: background-color 0.3s;
-            }
+/* === 1. GLOBAL VARIABLES AND SETUP (DEFAULT IS LIGHT MODE) === */
 
-            /* Dark mode styles */
-            body.dark-mode {
-                background-color: #111 !important;
-                color: #f5f5f5 !important;
-            }
-            body.dark-mode a {
-                color: #6dc1e7 !important;
-            }
-            body.dark-mode hr {
-                background: #333 !important;
-            }
-            body.dark-mode blockquote {
-                color: #f5f5f5 !important;
-                border-left-color: #666 !important;
-            }
-            body.dark-mode table,
-            body.dark-mode th,
-            body.dark-mode td {
-                border-color: #333 !important;
-                color: #f5f5f5 !important;
-            }
-            body.dark-mode pre,
-            body.dark-mode code,
-            body.dark-mode kbd,
-            body.dark-mode tt,
-            body.dark-mode var {
-                background: rgba(255, 255, 255, 0.05) !important;
-                color: #f5f5f5 !important;
-            }
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --primary-color: #6dc1e7; 
+    --line-height-base: 1.2rem;
+    --font-primary: 'ABC Diatype', sans-serif;
+    --content-padding: 30px; /* Consistent spacing */
+}
 
-            /* Ensure ABC Diatype font is applied everywhere */
-            html,
-            body,
-            button,
-            input,
-            select,
-            textarea {
-                font-family: "ABC Diatype", sans-serif !important;
-            }
-        </style>
+/* Base HTML and Body Styles */
+html, body { 
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+    font-family: var(--font-primary);
+    line-height: var(--line-height-base) !important; 
+    transition: background-color 0.3s, color 0.3s; 
+    margin: 0; padding: 0; 
+    overflow-x: hidden;
+    min-height: 100vh;
+}
 
-        <title>About Me</title>
-    </head>
-    <body class="typora-export">
-        <div class="typora-export-content">
-            <div id="write" class="">
-                <p>
-                    <strong><span>Md Mahi Khan</span></strong
-                    ><img
-                        src="https://p.ipic.vip/iud8dv.jpg"
-                        alt="mahi"
-                        style="
-                            zoom: 14%;
-                            float: right;
-                            margin-right: 10px;
-                            user-select: none;
-                            -webkit-user-drag: none;
-                        "
-                        oncontextmenu="return false;"
-                        draggable="false"
-                    />
-                </p>
-                <p>
-                    <span
-                        >Hello, I am currently a first year undergrad student at
-                        Aalto University Finland.</span
-                    >
-                </p>
-                <p>
-                    <span
-                        >My major is Quantum Computing, however I am deeply
-                        involved in design, implementation</span
-                    >
-                </p>
-                <p>
-                    <span
-                        >and all things GPU. I am particularly interested in
-                        writing of high performance CUDA
-                    </span>
-                </p>
-                <p><span>kernals given specific tight constraints.</span></p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <hr />
-                <p>
-                    <span
-                        >Aside from academic wrok I split my time between
-                        photography, design and playing
-                    </span>
-                </p>
-                <p>
-                    <span
-                        >chess with my girlfriend. I have started my undergrad
-                        later than usual, in the meantime I managed</span
-                    >
-                </p>
-                <p>
-                    <span
-                        >to pick certain skills that I believe have played a
-                        pivotal role in becoming who I am today. Some of lessons
-                    </span>
-                </p>
-                <p>
-                    <span
-                        >I have picked up over the years are listed below
-                        :</span
-                    >
-                </p>
-                <ol start="">
-                    <li>
-                        <p>
-                            <span
-                                >Loving family, friends and partner &gt;
-                                work.</span
-                            >
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span
-                                >Never compromise on being kind, forgiving to
-                                others around you.</span
-                            >
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span
-                                >Time is malleable, never compare yourself with
-                                others.</span
-                            >
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span
-                                >Sometimes intuition gets precedence over reason
-                                and that is okay.</span
-                            >
-                        </p>
-                    </li>
-                    <li>
-                        <p><span>Sleep at night.</span></p>
-                        <p>&nbsp;</p>
-                        <p>&nbsp;</p>
-                    </li>
-                </ol>
-                <hr />
-                <p><span>Links :</span></p>
-                <ul>
-                    <li>
-                        <p>
-                            <span>A curation of digital media at </span
-                            ><a href="https://www.cosmos.so/mvhikhn"
-                                ><span>COSMOS</span></a
-                            >
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span>Take at look at my </span
-                            ><a href="https://www.linkedin.com/in/mvhikhn/"
-                                ><span>Linkedin</span></a
-                            ><span> </span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <span>My photography at </span
-                            ><a href="https://www.instagram.com/mvhikhn/"
-                                ><span>Instagram</span></a
-                            >
-                        </p>
-                    </li>
-                </ul>
-                <p>&nbsp;</p>
-                <p>
-                    <span>Mail me : </span
-                    ><strong><span>mvhikhn at gmail dot com</span></strong
-                    ><span> </span>
-                </p>
-                <hr />
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <p>
-                    <span> </span
-                    ><em
-                        ><strong><span>🐈</span></strong></em
-                    ><span> </span>
-                </p>
-                <p>&nbsp;</p>
-            </div>
-        </div>
+/* Typora Export Wrapper: Centers content and provides absolute context for widgets */
+.typora-export-content {
+    position: relative; 
+    max-width: 914px; 
+    margin: 0 auto;
+    min-height: 100vh; 
+}
 
-        <!-- Dark Mode Toggle -->
-        <div id="dark-mode-toggle"></div>
+/* Main Content Wrapper (Text Flow) */
+#write { 
+    margin: 0; 
+    padding-top: 36px; 
+    padding-left: var(--content-padding); 
+    padding-right: var(--content-padding);
+    max-width: 100%; 
+    position: relative; 
+    word-break: normal; 
+    overflow-wrap: break-word; 
+    /* Add extra bottom padding to account for the widgets absolutely positioned below content */
+    padding-bottom: 80px; 
+}
 
-        <script>
-            const toggle = document.getElementById("dark-mode-toggle");
-            toggle.addEventListener("click", () => {
-                document.body.classList.toggle("dark-mode");
-                toggle.style.backgroundColor = document.body.classList.contains(
-                    "dark-mode",
-                )
-                    ? "#f5f5f5"
-                    : "#000";
+/* Responsive Content Widths */
+@media only screen and (min-width: 1400px) { .typora-export-content { max-width: 1024px; } }
+@media only screen and (min-width: 1800px) { .typora-export-content { max-width: 1200px; } }
+
+/* === 2. GENERAL TYPOGRAPHY & ELEMENTS === */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-primary); font-weight: normal; color: var(--text-color); }
+p, li { line-height: var(--line-height-base) !important; margin-top: 1rem; margin-bottom: 1rem; }
+a { color: #1a0dab; text-decoration: underline; transition: color 0.2s ease-in-out; cursor: pointer; }
+a:hover { color: var(--primary-color); }
+hr { background: #444 !important; margin-top: 1rem; margin-bottom: 1rem; height: 1px; border: none;}
+blockquote { color: var(--text-color); border-left: 2px solid #999; padding-left: 30px; margin: 1.5rem 0; }
+img { max-width: 100%; vertical-align: middle; float: left; margin-right: 10px; user-select: none; }
+
+
+/* === 3. DARK MODE STYLES & TOGGLE (DESKTOP) === */
+
+/* --- Dark Mode Overrides --- */
+body.dark-mode, html.dark-mode {
+    --bg-color: #111111;
+    --text-color: #f5f5f5;
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* Toggle Position (FIXED relative to viewport, outside content flow) */
+#dark-mode-toggle {
+    position: fixed; 
+    bottom: 40px; 
+    right: 30px; 
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background-color: #000000; 
+    cursor: pointer;
+    z-index: 9999;
+    transition: background-color 0.3s;
+}
+body.dark-mode #dark-mode-toggle { 
+    background-color: #f5f5f5;
+}
+
+
+/* === 4. EXTERNAL WIDGET STYLES (DESKTOP) === */
+
+/* Base Widget Styling: Absolute relative to the centered .typora-export-content */
+#listening, #literal-widget {
+    position: absolute; 
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    color: #ff69b4; 
+    z-index: 9000;
+    top: auto; 
+    bottom: 30px;
+    display: flex; 
+    align-items: center; 
+    gap: 8px;
+}
+
+/* --- Music Widget (#listening) --- */
+#listening {
+    /* FIX: Aligns with right content padding */
+    right: var(--content-padding); 
+    max-width: 50%; 
+    white-space: normal;
+}
+#listening img { width: 32px; height: 32px; border-radius: 50%; animation: spin 6s linear infinite; float: none; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* --- Book Widget (#literal-widget) --- */
+#literal-widget {
+    left: var(--content-padding); 
+}
+#literal-widget img { width: 32px; height: 44px; border-radius: 4px; float: none; }
+
+
+/* === 5. RESPONSIVE & PRINT RULES (MOBILE VIEW: < 500px) === */
+
+@media screen and (max-width: 500px) {
+    
+    /* 1. Content Padding Adjustment for Mobile */
+    #write { 
+        padding-left: 20px; 
+        padding-right: 20px; 
+        padding-bottom: 120px; 
+    }
+
+    /* 2. Widget Wrapper: Used ONLY for mobile layout */
+    #widget-wrapper {
+        /* This wrapper must be manually injected via JS or exist in HTML 
+           outside of #write but inside .typora-export-content for mobile.
+        */
+        position: static; 
+        display: flex;
+        justify-content: space-between; 
+        align-items: flex-start; /* Aligns both widgets to the top */
+        flex-wrap: nowrap; 
+        width: 100%;
+        padding: 0 20px 20px; 
+        box-sizing: border-box;
+    }
+    
+    /* 3. Widget Elements: Remove Fixed/Absolute Positioning */
+    #listening, #literal-widget {
+        position: static;
+        margin-top: 0;
+        bottom: unset; right: unset; left: unset; top: unset;
+        max-width: 48%; 
+        flex-shrink: 1;
+        
+        /* ALIGNMENT FIX: Keep inner content horizontal and aligned to top */
+        display: flex; 
+        align-items: flex-start; 
+        gap: 8px; 
+        text-align: left;
+    }
+
+    /* Allow music text to wrap */
+    #listening #track-text {
+        line-height: 1.1em;
+        white-space: normal; 
+    }
+    
+    /* 4. Toggle Positioning: Bottom Center (fixed) */
+    #dark-mode-toggle {
+        position: fixed; 
+        bottom: 40px; 
+        left: 50%; 
+        transform: translateX(-50%); 
+        right: unset; 
+        z-index: 10000;
+        background-color: var(--text-color); 
+    }
+}
+
+/* Print Styling */
+@media print { 
+    @page {margin: 0;} 
+    #dark-mode-toggle, #listening, #literal-widget, #widget-wrapper { display: none !important; }
+}
+
+/* ================================================================================
+    CSS STYLING ENDS HERE
+    ================================================================================
+*/
+</style>
+</head>
+
+<body class='typora-export'>
+<div class='typora-export-content'>
+<div id='write' class=''>
+
+    <p>
+  <strong><span>Md Mahi Khan</span></strong>
+  <img
+    src="https://p.ipic.vip/6llw81.jpg"
+    alt="mahi"
+    style="
+      float: right;
+      width: 100px; height: auto;            /* smaller & stable */
+      margin: 0 0 8px 15px;                 /* 15px gap on the left side */
+      border: 1px solid #ccc;
+      background: #fff;
+      border-radius: 6px;
+      shape-outside: margin-box;            /* make text wrap with the margin */
+      shape-margin: 15px;                   /* extra safety buffer */
+    "
+    oncontextmenu="return false;"
+    draggable="false"
+  />
+</p>
+
+
+    <p><span>Hello, I am currently a first year undergrad student at NJIT.</span></p>
+    <p><span>I am majoring in Computer Engineering and I am deeply involved in design, implementation</span></p>
+    <p><span>and all things GPU. I am particularly interested in writing of high performance CUDA </span></p>
+    <p><span>kernals given specific constraints.</span></p>
+
+    <p><span>🐈</span></p><hr />
+
+    <p><span>Aside from academic work I split my time between photography, design and playing </span></p>
+    <p><span>chess with my girlfriend. I have started my undergrad later than usual, in the meantime I managed</span></p>
+    <p><span>to pick certain skills that I believe have played a pivotal role in becoming who I am today. Some of lessons </span></p>
+    <p><span>I have picked up over the years are listed below :</span></p>
+
+    <ol>
+        <li><p><span>Loving family, friends and partner &gt; work.</span></p></li>
+        <li><p><span>Never compromise on being kind, forgiving to others around you.</span></p></li>
+        <li><p><span>Time is malleable, never compare yourself with others.</span></p></li>
+        <li><p><span>Sometimes intuition gets precedence over reason and that is okay.</span></p></li>
+        <li><p><span>Sleep at night.</span></p><p></p></li>
+    </ol>
+
+    <p><span>🐈</span></p><hr />
+
+    <p><span>Links :</span></p>
+    <ul>
+        <li><p><span>A curation of digital media at </span><a href='https://www.cosmos.so/mvhikhn'><span>COSMOS</span></a></p></li>
+        <li><p><span>Take a look at my </span><a href='https://www.linkedin.com/in/mvhikhn/'><span>Linkedin</span></a><span> </span></p></li>
+        <li><p><span>My photography at </span><a href='https://www.instagram.com/mvhikhn/'><span>Instagram</span></a></p></li>
+    </ul>
+
+    <hr />
+
+    <blockquote>
+        <p><em><span>Mail me : mvhikhn at gmail dot com</span></em></p>
+    </blockquote>
+
+    </div>
+
+<div id="literal-widget" handle="mvhikhn" status="IS_READING" layout="row"></div>
+<script src="https://literal.club/js/widget.js"></script>
+
+<div id="listening">
+    <img id="album-art" src="" alt="album art" style="display:none;" />
+    <span id="track-text">Enjoying Quietness</span>
+</div>
+
+<div id="widget-wrapper"></div>
+
+
+</div> <div id="dark-mode-toggle"></div>
+
+<script>
+    /* ============================================================================
+        JAVASCRIPT LOGIC STARTS HERE
+        ============================================================================
+    */
+
+    // --- 1. Last.fm Widget Logic (Unchanged) ---
+    const username = "mvhikhn";
+    const apiKey = "e2b2748357773b9391e88fe03d317ec7"; // 👉 EDIT HERE: Your Last.fm API Key
+
+    function loadListening() {
+        fetch(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${username}&api_key=${apiKey}&format=json&limit=1`)
+            .then((response) => response.json())
+            .then((data) => {
+                const track = data.recenttracks?.track?.[0];
+                const albumArt = document.getElementById("album-art");
+                const trackText = document.getElementById("track-text");
+
+                if (!track || track["@attr"]?.nowplaying !== "true") {
+                    trackText.innerText = "Nothing is playing";
+                    albumArt.style.display = "none";
+                    return;
+                }
+
+                const artist = track.artist["#text"] || "Unknown Artist";
+                const name = track.name || "Unknown Title";
+                let album = track.image?.reverse().find(img => img["#text"])?.["#text"] || "";
+
+                trackText.innerText = `${name} – ${artist}`;
+                albumArt.src = album;
+                albumArt.style.display = "inline-block";
+            })
+            .catch(() => {
+                document.getElementById("track-text").innerText = "Error fetching music data";
+                document.getElementById("album-art").style.display = "none";
             });
-        </script>
-    </body>
+    }
+
+    loadListening();
+    setInterval(loadListening, 15000);
+    
+    // --- 2. Dark Mode Toggle Logic (Light Default) ---
+
+    const toggle = document.getElementById("dark-mode-toggle");
+    const isDarkModeActive = () => document.body.classList.contains("dark-mode");
+
+    // Set initial toggle state (Light Mode = Black toggle)
+    toggle.style.backgroundColor = "#000";
+
+    // Event listener for the toggle button click
+    toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        document.documentElement.classList.toggle("dark-mode"); 
+        
+        // Update the toggle button's color 
+        toggle.style.backgroundColor = isDarkModeActive()
+            ? "#f5f5f5" 
+            : "#000";    
+    });
+
+    /* ============================================================================
+        MOBILE WIDGET HACK: Moves widgets inside the wrapper on small screens.
+        ============================================================================
+    */
+    const widgetWrapper = document.getElementById('widget-wrapper');
+    const listeningWidget = document.getElementById('listening');
+    const literalWidget = document.getElementById('literal-widget');
+
+    // Function to check if we are in mobile layout
+    const isMobile = () => window.innerWidth <= 500;
+
+    // Function to move widgets based on screen size
+    function updateWidgetPlacement() {
+        if (isMobile()) {
+            // Move widgets into the wrapper for mobile stacking/side-by-side control
+            widgetWrapper.appendChild(literalWidget);
+            widgetWrapper.appendChild(listeningWidget);
+        } else {
+            // Move widgets back out (or keep them out) for absolute desktop positioning
+            const contentContainer = document.querySelector('.typora-export-content');
+            if (contentContainer) {
+                contentContainer.appendChild(literalWidget);
+                contentContainer.appendChild(listeningWidget);
+            }
+        }
+    }
+
+    // Run on load and on resize
+    updateWidgetPlacement();
+    window.addEventListener('resize', updateWidgetPlacement);
+
+
+    /* ============================================================================
+        JAVASCRIPT LOGIC ENDS HERE
+        ============================================================================
+    */
+</script>
+
+</body>
 </html>
