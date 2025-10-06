@@ -29,7 +29,7 @@
     --content-padding: 30px;
     --link-color: #999999;
     --link-hover-color: #000000;
-    --top-spacing: 86px;
+    --top-spacing: 86px;  /* stays same on mobile now */
     --footer-height: 80px;
 }
 
@@ -97,7 +97,6 @@ a, button, input, textarea {
     margin: 0; 
     padding-left: var(--content-padding); 
     padding-right: var(--content-padding);
-    padding-bottom: var(--footer-height); /* ensures content never hidden by footer */
     max-width: 100%; 
     position: relative; 
     word-break: normal; 
@@ -137,6 +136,7 @@ blockquote {
     transition: color 0.3s ease;
 }
 img { max-width: 100%; vertical-align: middle; float: left; margin-right: 10px; user-select: none; }
+
 
 /* === 3. DARK MODE STYLES === */
 body.dark-mode, html.dark-mode {
@@ -279,10 +279,11 @@ body.dark-mode #dark-mode-toggle {
 /* === 6. RESPONSIVE RULES === */
 @media screen and (max-width: 500px) {
 
+    /* removed the old override of --top-spacing */
+
     #write { 
         padding-left: 20px; 
         padding-right: 20px;
-        /* padding-bottom already includes footer, so no change needed */
     }
 
     #footer-wrapper {
@@ -313,6 +314,10 @@ body.dark-mode #dark-mode-toggle {
     #footer-container, #dark-mode-toggle, #listening, #literal-widget { display: none !important; }
 }
 
+/* ================================================================================
+    CSS STYLING ENDS HERE
+    ================================================================================
+*/
 </style>
 </head>
 
@@ -343,37 +348,38 @@ body.dark-mode #dark-mode-toggle {
   />
 </p>
 
-<p><span>Hello, I am currently a first year undergrad student at NJIT. I am majoring in Computer Engineering and I am deeply involved in design, implementation and all things GPU. I am particularly interested in writing of high performance CUDA kernals given specific constraints.</span></p>
 
-<p style="clear: both;"><span>🐈</span></p><hr />
+    <p><span>Hello, I am currently a first year undergrad student at NJIT. I am majoring in Computer Engineering and I am deeply involved in design, implementation and all things GPU. I am particularly interested in writing of high performance CUDA kernals given specific constraints.</span></p>
 
-<p><span>Aside from academic work I split my time between photography, design and playing chess with my girlfriend. I have started my undergrad later than usual, in the meantime I managed
-to pick certain skills that I believe have played a pivotal role in becoming who I am today. Some of lessons I have picked up over the years are listed below :</span></p>
+    <p style="clear: both;"><span>🐈</span></p><hr />
 
-<ol>
-    <li><p><span>Loving family, friends and partner &gt; work.</span></p></li>
-    <li><p><span>Never compromise on being kind, forgiving to others around you.</span></p></li>
-    <li><p><span>Time is malleable, never compare yourself with others.</span></p></li>
-    <li><p><span>Sometimes intuition gets precedence over reason and that is okay.</span></p></li>
-    <li><p><span>Sleep at night.</span></p><p></p></li>
-</ol>
+    <p><span>Aside from academic work I split my time between photography, design and playing chess with my girlfriend. I have started my undergrad later than usual, in the meantime I managed
+    to pick certain skills that I believe have played a pivotal role in becoming who I am today. Some of lessons I have picked up over the years are listed below :</span></p>
 
-<p><span>🐈</span></p><hr />
+    <ol>
+        <li><p><span>Loving family, friends and partner &gt; work.</span></p></li>
+        <li><p><span>Never compromise on being kind, forgiving to others around you.</span></p></li>
+        <li><p><span>Time is malleable, never compare yourself with others.</span></p></li>
+        <li><p><span>Sometimes intuition gets precedence over reason and that is okay.</span></p></li>
+        <li><p><span>Sleep at night.</span></p><p></p></li>
+    </ol>
 
-<p><span>Links :</span></p>
-<ul>
-    <li><p><span>A curation of digital media at </span><a href='https://www.cosmos.so/mvhikhn' rel="noopener" aria-label="Visit my COSMOS digital media collection"><span>COSMOS</span></a></p></li>
-    <li><p><span>Take a look at my </span><a href='https://www.linkedin.com/in/mvhikhn/' rel="noopener" aria-label="View my LinkedIn profile"><span>Linkedin</span></a><span> </span></p></li>
-    <li><p><span>My photography at </span><a href='https://www.instagram.com/mvhikhn/' rel="noopener" aria-label="Check out my Instagram photography"><span>Instagram</span></a></p></li>
-</ul>
+    <p><span>🐈</span></p><hr />
 
-<hr />
+    <p><span>Links :</span></p>
+    <ul>
+        <li><p><span>A curation of digital media at </span><a href='https://www.cosmos.so/mvhikhn' rel="noopener" aria-label="Visit my COSMOS digital media collection"><span>COSMOS</span></a></p></li>
+        <li><p><span>Take a look at my </span><a href='https://www.linkedin.com/in/mvhikhn/' rel="noopener" aria-label="View my LinkedIn profile"><span>Linkedin</span></a><span> </span></p></li>
+        <li><p><span>My photography at </span><a href='https://www.instagram.com/mvhikhn/' rel="noopener" aria-label="Check out my Instagram photography"><span>Instagram</span></a></p></li>
+    </ul>
 
-<blockquote>
-    <p><em><span>Mail me : mvhikhn at gmail dot com</span></em></p>
-</blockquote>
+    <hr />
 
-</div>
+    <blockquote>
+        <p><em><span>Mail me : mvhikhn at gmail dot com</span></em></p>
+    </blockquote>
+
+    </div>
 </div>
 
 <div id="footer-container" role="contentinfo">
@@ -395,6 +401,7 @@ to pick certain skills that I believe have played a pivotal role in becoming who
         ============================================================================
     */
 
+    // --- 1. Last.fm Widget Logic with timeout ---
     const username = "mvhikhn";
     const apiKey = "e2b2748357773b9391e88fe03d317ec7";
 
@@ -441,19 +448,27 @@ to pick certain skills that I believe have played a pivotal role in becoming who
             });
     }
 
+    // Defer non-critical loading
     if (document.readyState === 'complete') {
         loadListening();
     } else {
         window.addEventListener('load', loadListening);
     }
     setInterval(loadListening, 15000);
-
+    
+    // Prevent dragging on album art
     const albumArt = document.getElementById('album-art');
     if (albumArt) {
-        albumArt.addEventListener('dragstart', function(e) { e.preventDefault(); return false; });
-        albumArt.addEventListener('mousedown', function(e) { e.preventDefault(); });
+        albumArt.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        albumArt.addEventListener('mousedown', function(e) {
+            e.preventDefault();
+        });
     }
 
+    // --- 2. Literal Widget with async loading ---
     (function() {
         const loadWidget = function() {
             const script = document.createElement('script');
@@ -463,17 +478,20 @@ to pick certain skills that I believe have played a pivotal role in becoming who
             script.onerror = function() {
                 const widget = document.getElementById('literal-widget');
                 if (widget) {
-                    widget.style.display = 'none';
+                    widget.style.visibility = 'hidden'; /* changed to preserve space */
                 }
             };
             document.head.appendChild(script);
         };
+        
         if (document.readyState === 'complete') {
             loadWidget();
         } else {
             window.addEventListener('load', loadWidget);
         }
     })();
+    
+    // --- 3. Dark Mode Toggle Logic ---
 
     const toggle = document.getElementById("dark-mode-toggle");
     const isDarkModeActive = () => document.body.classList.contains("dark-mode");
@@ -489,7 +507,12 @@ to pick certain skills that I believe have played a pivotal role in becoming who
         toggle.setAttribute('aria-checked', darkMode.toString());
     });
 
+    /* ============================================================================
+        JAVASCRIPT LOGIC ENDS HERE
+        ============================================================================
+    */
 </script>
 
 </body>
 </html>
+
