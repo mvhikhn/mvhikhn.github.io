@@ -29,7 +29,7 @@
     --content-padding: 30px;
     --link-color: #999999;
     --link-hover-color: #000000;
-    --top-spacing: 86px;  /* stays same on mobile now */
+    --top-spacing: 86px;
     --footer-height: 80px;
 }
 
@@ -81,7 +81,7 @@ a, button, input, textarea {
     outline: none;
 }
 
-/* Typora Export Wrapper */
+/* Typora Export Wrapper: Centers content and provides absolute context for widgets */
 .typora-export-content {
     position: relative; 
     max-width: 814px; 
@@ -92,7 +92,7 @@ a, button, input, textarea {
     padding-bottom: var(--footer-height);
 }
 
-/* Main Content Wrapper */
+/* Main Content Wrapper (Text Flow) */
 #write { 
     margin: 0; 
     padding-left: var(--content-padding); 
@@ -138,7 +138,9 @@ blockquote {
 img { max-width: 100%; vertical-align: middle; float: left; margin-right: 10px; user-select: none; }
 
 
-/* === 3. DARK MODE STYLES === */
+/* === 3. DARK MODE STYLES & TOGGLE === */
+
+/* --- Dark Mode Overrides --- */
 body.dark-mode, html.dark-mode {
     --bg-color: #0C0A09;
     --text-color: #d4d4d4;
@@ -182,6 +184,7 @@ body.dark-mode, html.dark-mode {
     #footer-wrapper { max-width: 1100px; } 
 }
 
+/* Toggle Position - Center */
 #dark-mode-toggle {
     width: 12px; 
     height: 12px;
@@ -201,7 +204,10 @@ body.dark-mode #dark-mode-toggle {
     background-color: #d4d4d4;
 }
 
+
 /* === 5. WIDGET STYLES === */
+
+/* Base Widget Styling */
 #listening, #literal-widget {
     font-family: var(--font-primary);
     font-size: 0.95rem;
@@ -213,7 +219,7 @@ body.dark-mode #dark-mode-toggle {
     min-width: 0;
 }
 
-/* Book Widget */
+/* --- Book Widget (#literal-widget) --- */
 #literal-widget {
     justify-content: flex-start;
     justify-self: start;
@@ -234,7 +240,7 @@ body.dark-mode #dark-mode-toggle {
     flex-shrink: 0;
 }
 
-/* Music Widget */
+/* --- Music Widget (#listening) --- */
 #listening {
     justify-content: flex-end;
     text-align: right;
@@ -276,11 +282,16 @@ body.dark-mode #dark-mode-toggle {
     100% { transform: rotate(360deg); } 
 }
 
-/* === 6. RESPONSIVE RULES === */
+
+/* === 6. RESPONSIVE & PRINT RULES (MOBILE VIEW: < 500px) === */
+
 @media screen and (max-width: 500px) {
+    
+    :root {
+        --top-spacing: 60px;
+    }
 
-    /* removed the old override of --top-spacing */
-
+    /* Content Padding Adjustment for Mobile */
     #write { 
         padding-left: 20px; 
         padding-right: 20px;
@@ -478,7 +489,7 @@ body.dark-mode #dark-mode-toggle {
             script.onerror = function() {
                 const widget = document.getElementById('literal-widget');
                 if (widget) {
-                    widget.style.visibility = 'hidden'; /* changed to preserve space */
+                    widget.style.display = 'none';
                 }
             };
             document.head.appendChild(script);
@@ -491,7 +502,7 @@ body.dark-mode #dark-mode-toggle {
         }
     })();
     
-    // --- 3. Dark Mode Toggle Logic ---
+    // --- 3. Dark Mode Toggle Logic (Light Default) ---
 
     const toggle = document.getElementById("dark-mode-toggle");
     const isDarkModeActive = () => document.body.classList.contains("dark-mode");
@@ -515,4 +526,3 @@ body.dark-mode #dark-mode-toggle {
 
 </body>
 </html>
-
