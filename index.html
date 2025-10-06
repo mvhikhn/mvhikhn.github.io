@@ -29,8 +29,6 @@
     --content-padding: 30px;
     --link-color: #999999;
     --link-hover-color: #000000;
-    --top-spacing: 86px;
-    --footer-height: 80px;
 }
 
 /* Base HTML and Body Styles */
@@ -84,19 +82,19 @@ a, button, input, textarea {
 /* Typora Export Wrapper: Centers content and provides absolute context for widgets */
 .typora-export-content {
     position: relative; 
-    max-width: 814px; 
+    max-width: 914px; 
     margin: 0 auto;
-    min-height: calc(100vh - var(--top-spacing) - var(--footer-height));
+    min-height: calc(100vh - 120px);
     transition: background-color 0.3s ease;
-    padding-top: var(--top-spacing);
-    padding-bottom: var(--footer-height);
 }
 
 /* Main Content Wrapper (Text Flow) */
 #write { 
     margin: 0; 
+    padding-top: 36px; 
     padding-left: var(--content-padding); 
     padding-right: var(--content-padding);
+    padding-bottom: 60px;
     max-width: 100%; 
     position: relative; 
     word-break: normal; 
@@ -105,8 +103,8 @@ a, button, input, textarea {
 }
 
 /* Responsive Content Widths */
-@media only screen and (min-width: 1400px) { .typora-export-content { max-width: 924px; } }
-@media only screen and (min-width: 1800px) { .typora-export-content { max-width: 1100px; } }
+@media only screen and (min-width: 1400px) { .typora-export-content { max-width: 1024px; } }
+@media only screen and (min-width: 1800px) { .typora-export-content { max-width: 1200px; } }
 
 /* === 2. GENERAL TYPOGRAPHY & ELEMENTS === */
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-primary); font-weight: normal; color: var(--text-color); }
@@ -154,7 +152,7 @@ body.dark-mode, html.dark-mode {
     bottom: 0;
     left: 0;
     right: 0;
-    height: var(--footer-height);
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -166,26 +164,29 @@ body.dark-mode, html.dark-mode {
 }
 
 #footer-wrapper {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 814px;
+    max-width: 914px;
     padding: 0 var(--content-padding);
     box-sizing: border-box;
     pointer-events: auto;
-    gap: 20px;
+    position: relative;
 }
 
 @media only screen and (min-width: 1400px) { 
-    #footer-wrapper { max-width: 924px; } 
+    #footer-wrapper { max-width: 1024px; } 
 }
 @media only screen and (min-width: 1800px) { 
-    #footer-wrapper { max-width: 1100px; } 
+    #footer-wrapper { max-width: 1200px; } 
 }
 
 /* Toggle Position - Center */
 #dark-mode-toggle {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     width: 12px; 
     height: 12px;
     min-width: 12px;
@@ -198,7 +199,6 @@ body.dark-mode, html.dark-mode {
     border: none;
     padding: 0;
     display: block;
-    justify-self: center;
 }
 body.dark-mode #dark-mode-toggle { 
     background-color: #d4d4d4;
@@ -217,12 +217,12 @@ body.dark-mode #dark-mode-toggle {
     gap: 8px;
     flex-shrink: 1;
     min-width: 0;
+    max-width: 45%;
 }
 
 /* --- Book Widget (#literal-widget) --- */
 #literal-widget {
     justify-content: flex-start;
-    justify-self: start;
 }
 #literal-widget img { 
     width: 32px; 
@@ -245,7 +245,6 @@ body.dark-mode #dark-mode-toggle {
     justify-content: flex-end;
     text-align: right;
     flex-direction: row-reverse;
-    justify-self: end;
 }
 #listening img { 
     width: 32px; 
@@ -287,23 +286,20 @@ body.dark-mode #dark-mode-toggle {
 
 @media screen and (max-width: 500px) {
     
-    :root {
-        --top-spacing: 60px;
-    }
-
     /* Content Padding Adjustment for Mobile */
     #write { 
         padding-left: 20px; 
-        padding-right: 20px;
+        padding-right: 20px; 
+        padding-bottom: 60px; 
     }
 
     #footer-wrapper {
         padding: 0 20px;
-        gap: 15px;
     }
 
     #listening, #literal-widget {
         font-size: 0.85rem;
+        max-width: 40%;
     }
 
     #listening img {
