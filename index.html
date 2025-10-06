@@ -152,7 +152,7 @@ body.dark-mode, html.dark-mode {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -247,10 +247,10 @@ body.dark-mode #dark-mode-toggle {
     flex-direction: row-reverse;
 }
 #listening img { 
-    width: 32px; 
-    height: 32px; 
-    min-width: 32px;
-    min-height: 32px;
+    width: 34px; 
+    height: 34px; 
+    min-width: 34px;
+    min-height: 34px;
     border-radius: 50%; 
     animation: spin 6s linear infinite; 
     float: none; 
@@ -319,6 +319,17 @@ body.dark-mode #dark-mode-toggle {
 @media print { 
     @page {margin: 0;} 
     #footer-container, #dark-mode-toggle, #listening, #literal-widget { display: none !important; }
+}
+/* Hide scrollbars globally but keep scrolling */
+html, body {
+    overflow: scroll;           /* enable scrolling */
+    -ms-overflow-style: none;   /* hide scrollbar in IE/Edge */
+    scrollbar-width: none;      /* hide scrollbar in Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;              /* hide scrollbar in Chrome, Safari, Opera */
 }
 
 /* ================================================================================
