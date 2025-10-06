@@ -320,6 +320,17 @@ body.dark-mode #dark-mode-toggle {
     @page {margin: 0;} 
     #footer-container, #dark-mode-toggle, #listening, #literal-widget { display: none !important; }
 }
+/* Hide scrollbars globally but keep scrolling */
+html, body {
+    overflow: scroll;           /* enable scrolling */
+    -ms-overflow-style: none;   /* hide scrollbar in IE/Edge */
+    scrollbar-width: none;      /* hide scrollbar in Firefox */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;              /* hide scrollbar in Chrome, Safari, Opera */
+}
 
 /* ================================================================================
     CSS STYLING ENDS HERE
