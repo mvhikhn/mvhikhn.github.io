@@ -1,11 +1,17 @@
 <!DOCTYPE html>
-<html style='font-size:12px !important'>
+
+<html lang="en" style='font-size:12px !important'>
 <head>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name="description" content="Md Mahi Khan - Computer Engineering student at NJIT specializing in GPU programming and CUDA kernels">
 <title>Mahi</title>
 
-<link href='https://db.onlinewebfonts.com/c/f05bbbfac1257664fc69ba21f8451b57?family=ABC+Diatype' rel='stylesheet' type='text/css' />
+<link rel="preconnect" href="https://db.onlinewebfonts.com">
+<link rel="preconnect" href="https://ws.audioscrobbler.com">
+<link rel="preconnect" href="https://literal.club">
+<link href='https://db.onlinewebfonts.com/c/f05bbbfac1257664fc69ba21f8451b57?family=ABC+Diatype' rel='stylesheet' type='text/css' media="print" onload="this.media='all'" />
+<noscript><link href='https://db.onlinewebfonts.com/c/f05bbbfac1257664fc69ba21f8451b57?family=ABC+Diatype' rel='stylesheet' type='text/css' /></noscript>
 
 <style>
 /* ================================================================================
@@ -20,8 +26,8 @@
     --text-color: #000000;
     --primary-color: #6dc1e7; 
     --line-height-base: 1.4rem;
-    --font-primary: 'ABC Diatype', sans-serif;
-    --content-padding: 30px; /* Consistent spacing */
+    --font-primary: 'ABC Diatype', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --content-padding: 30px;
     --link-color: #999999;
     --link-hover-color: #000000;
 }
@@ -155,6 +161,7 @@ body.dark-mode, html.dark-mode {
     pointer-events: none;
     background-color: var(--bg-color);
     transition: background-color 0.3s ease;
+    will-change: background-color;
 }
 
 #footer-wrapper {
@@ -183,11 +190,16 @@ body.dark-mode, html.dark-mode {
     transform: translateX(-50%);
     width: 12px; 
     height: 12px;
+    min-width: 12px;
+    min-height: 12px;
     border-radius: 50%;
     background-color: #000000; 
     cursor: pointer;
     transition: background-color 0.3s ease;
     flex-shrink: 0;
+    border: none;
+    padding: 0;
+    display: block;
 }
 body.dark-mode #dark-mode-toggle { 
     background-color: #d4d4d4;
@@ -233,10 +245,13 @@ body.dark-mode #dark-mode-toggle {
 #listening {
     justify-content: flex-end;
     text-align: right;
+    flex-direction: row-reverse;
 }
 #listening img { 
     width: 32px; 
     height: 32px; 
+    min-width: 32px;
+    min-height: 32px;
     border-radius: 50%; 
     animation: spin 6s linear infinite; 
     float: none; 
@@ -249,7 +264,7 @@ body.dark-mode #dark-mode-toggle {
     -moz-user-drag: none;
     pointer-events: none;
     flex-shrink: 0;
-    order: 2;
+    will-change: transform;
 }
 
 #listening #track-text {
@@ -259,11 +274,13 @@ body.dark-mode #dark-mode-toggle {
     overflow-wrap: break-word;
     word-break: break-word;
     hyphens: auto;
-    order: 1;
     min-width: 0;
 }
 
-@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+@keyframes spin { 
+    0% { transform: rotate(0deg); } 
+    100% { transform: rotate(360deg); } 
+}
 
 
 /* === 6. RESPONSIVE & PRINT RULES (MOBILE VIEW: < 500px) === */
@@ -289,6 +306,8 @@ body.dark-mode #dark-mode-toggle {
     #listening img {
         width: 28px;
         height: 28px;
+        min-width: 28px;
+        min-height: 28px;
     }
 
     #literal-widget img {
@@ -318,7 +337,9 @@ body.dark-mode #dark-mode-toggle {
   <strong><span>Md Mahi Khan</span></strong>
   <img
     src="https://p.ipic.vip/6llw81.jpg"
-    alt="mahi"
+    alt="Portrait of Mahi Khan"
+    width="100"
+    height="100"
     style="
       float: right;
       width: 100px; height: auto;
@@ -331,6 +352,7 @@ body.dark-mode #dark-mode-toggle {
     "
     oncontextmenu="return false;"
     draggable="false"
+    loading="eager"
   />
 </p>
 
@@ -354,9 +376,9 @@ body.dark-mode #dark-mode-toggle {
 
     <p><span>Links :</span></p>
     <ul>
-        <li><p><span>A curation of digital media at </span><a href='https://www.cosmos.so/mvhikhn'><span>COSMOS</span></a></p></li>
-        <li><p><span>Take a look at my </span><a href='https://www.linkedin.com/in/mvhikhn/'><span>Linkedin</span></a><span> </span></p></li>
-        <li><p><span>My photography at </span><a href='https://www.instagram.com/mvhikhn/'><span>Instagram</span></a></p></li>
+        <li><p><span>A curation of digital media at </span><a href='https://www.cosmos.so/mvhikhn' rel="noopener" aria-label="Visit my COSMOS digital media collection"><span>COSMOS</span></a></p></li>
+        <li><p><span>Take a look at my </span><a href='https://www.linkedin.com/in/mvhikhn/' rel="noopener" aria-label="View my LinkedIn profile"><span>Linkedin</span></a><span> </span></p></li>
+        <li><p><span>My photography at </span><a href='https://www.instagram.com/mvhikhn/' rel="noopener" aria-label="Check out my Instagram photography"><span>Instagram</span></a></p></li>
     </ul>
 
     <hr />
@@ -368,15 +390,15 @@ body.dark-mode #dark-mode-toggle {
     </div>
 </div>
 
-<div id="footer-container">
+<div id="footer-container" role="contentinfo">
     <div id="footer-wrapper">
-        <div id="literal-widget" handle="mvhikhn" status="IS_READING" layout="row"></div>
+        <div id="literal-widget" handle="mvhikhn" status="IS_READING" layout="row" role="complementary" aria-label="Currently reading book"></div>
         
-        <div id="dark-mode-toggle"></div>
+        <button id="dark-mode-toggle" aria-label="Toggle dark mode" role="switch" aria-checked="false"></button>
         
-        <div id="listening">
+        <div id="listening" role="complementary" aria-label="Currently playing music">
+            <img id="album-art" src="" alt="Album artwork" style="display:none;" draggable="false" oncontextmenu="return false;" width="32" height="32" loading="lazy" />
             <span id="track-text">Enjoying Quietness</span>
-            <img id="album-art" src="" alt="album art" style="display:none;" draggable="false" oncontextmenu="return false;" />
         </div>
     </div>
 </div>
@@ -418,23 +440,28 @@ body.dark-mode #dark-mode-toggle {
                 let album = track.image?.reverse().find(img => img["#text"])?.["#text"] || "";
 
                 trackText.innerText = `${name} — ${artist}`;
-                albumArt.src = album;
-                albumArt.style.display = "inline-block";
+                if (album) {
+                    albumArt.src = album;
+                    albumArt.style.display = "inline-block";
+                } else {
+                    albumArt.style.display = "none";
+                }
             })
             .catch((error) => {
                 clearTimeout(timeoutId);
                 const trackText = document.getElementById("track-text");
                 const albumArt = document.getElementById("album-art");
-                if (error.name === 'AbortError') {
-                    trackText.innerText = "Enjoying Quietness";
-                } else {
-                    trackText.innerText = "Enjoying Quietness";
-                }
+                trackText.innerText = "Enjoying Quietness";
                 albumArt.style.display = "none";
             });
     }
 
-    loadListening();
+    // Defer non-critical loading
+    if (document.readyState === 'complete') {
+        loadListening();
+    } else {
+        window.addEventListener('load', loadListening);
+    }
     setInterval(loadListening, 15000);
     
     // Prevent dragging on album art
@@ -451,16 +478,25 @@ body.dark-mode #dark-mode-toggle {
 
     // --- 2. Literal Widget with async loading ---
     (function() {
-        const script = document.createElement('script');
-        script.src = 'https://literal.club/js/widget.js';
-        script.async = true;
-        script.onerror = function() {
-            const widget = document.getElementById('literal-widget');
-            if (widget) {
-                widget.style.display = 'none';
-            }
+        const loadWidget = function() {
+            const script = document.createElement('script');
+            script.src = 'https://literal.club/js/widget.js';
+            script.async = true;
+            script.defer = true;
+            script.onerror = function() {
+                const widget = document.getElementById('literal-widget');
+                if (widget) {
+                    widget.style.display = 'none';
+                }
+            };
+            document.head.appendChild(script);
         };
-        document.head.appendChild(script);
+        
+        if (document.readyState === 'complete') {
+            loadWidget();
+        } else {
+            window.addEventListener('load', loadWidget);
+        }
     })();
     
     // --- 3. Dark Mode Toggle Logic (Light Default) ---
@@ -474,9 +510,9 @@ body.dark-mode #dark-mode-toggle {
         document.body.classList.toggle("dark-mode");
         document.documentElement.classList.toggle("dark-mode"); 
         
-        toggle.style.backgroundColor = isDarkModeActive()
-            ? "#d4d4d4" 
-            : "#000";    
+        const darkMode = isDarkModeActive();
+        toggle.style.backgroundColor = darkMode ? "#d4d4d4" : "#000";
+        toggle.setAttribute('aria-checked', darkMode.toString());
     });
 
     /* ============================================================================
