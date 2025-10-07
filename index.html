@@ -75,23 +75,7 @@ a, button, input, textarea {
     outline: none;
 }
     
-* {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    user-drag: none;
-}
 
-p, span, strong, em, li, a, h1, h2, h3, h4, h5, h6, blockquote {
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    user-drag: none;
-}
     
 *:focus {
     outline: none;
@@ -349,7 +333,6 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
     display: none;              /* hide scrollbar in Chrome, Safari, Opera */
 }
-
 /* ================================================================================
     CSS STYLING ENDS HERE
     ================================================================================
@@ -542,7 +525,21 @@ body::-webkit-scrollbar {
         toggle.style.backgroundColor = darkMode ? "#d4d4d4" : "#000";
         toggle.setAttribute('aria-checked', darkMode.toString());
     });
+// --- 4. Prevent text drag globally ---
+document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+    return false;
+});
 
+document.addEventListener('drop', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+document.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    return false;
+});
     /* ============================================================================
         JAVASCRIPT LOGIC ENDS HERE
         ============================================================================
